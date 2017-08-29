@@ -1,0 +1,19 @@
+<div id='title_line'>
+  <h1>Edit Contact</h1>
+</div>
+
+<%= form_for @contact do |f| %>
+  <div id='form'>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </div>
+  <div id='form'>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  </div>
+  <div id='form'>
+  <%= f.label :email %>
+  <%= f.text_area :email %>
+  </div>
+  <%= f.submit %>
+<% end %>

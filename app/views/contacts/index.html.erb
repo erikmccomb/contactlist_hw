@@ -1,0 +1,11 @@
+<div id='title_line'>
+  <h1>Contacts</h1>
+<div>
+<hr/>
+<p><%= link_to 'Add contact', new_contact_path %></p>
+<hr/>
+<ul>
+<% @contacts.each do |contact| %>
+  <h3><%= link_to contact.name, contact_path(contact) %><h3>
+<% end %>
+</ul>
