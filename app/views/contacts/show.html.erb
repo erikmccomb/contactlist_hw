@@ -1,12 +1,24 @@
 <div id='title_line'>
-  <h1><%= @contact.name %></h1>
+  <h1>
+    <%= @contact.name %>
+  </h1>
 </div>
 <hr>
-<h3><%= @contact.phone %></h3>
-<h3><%= @contact.email %></h3>
+<h3>
+  <%= @contact.phone %>
+</h3>
+<h3>
+  <%= @contact.email %>
+</h3>
+
+<% @contact.notes.each do |note| %>
+  <%= note.body %>
+  <%= link_to 'Edit note', edit_contact_note_path(@contact, note) %> ||
+  <%= link_to 'Delete note', contact_note_path(@contact, note), method: :delete %>
+<% end %>
 <hr/>
 <p>
-<%= link_to 'Edit contact', edit_contact_path(@contact) %> || 
+<%= link_to 'Edit contact', edit_contact_path(@contact) %> ||
 <%= link_to 'Delete contact', @contact, method: :delete %>
 <br>
 <%= link_to 'All Contacts', contacts_path %>
